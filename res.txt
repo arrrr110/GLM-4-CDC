@@ -1,0 +1,43 @@
+【SSE】
+
+id='8415033250225912686' 
+choices=[
+	Choice(
+		delta=ChoiceDelta(
+			content=None, 
+			role='assistant', 
+			tool_calls=[
+				ChoiceDeltaToolCall(
+					index=0, 
+					id='call_8415033250225912686', 	
+					function=ChoiceDeltaToolCallFunction(
+						arguments='{"age_of_month":"24"}', 
+						name='get_milestone_question'), 
+						type='function')]), 	
+	finish_reason='tool_calls', index=0)
+	] 
+created=1708615181 
+model='glm-4' 
+usage=None
+
+【同步】
+model='glm-4' 
+created=1708615674 
+choices=[
+	CompletionChoice(
+		index=0, 
+		finish_reason='tool_calls', 
+		message=CompletionMessage(
+			content=None, 
+			role='assistant', 
+			tool_calls=[
+				CompletionMessageToolCall(
+					id='call_8415027409070219254', 
+					function=Function(
+						arguments='{"age_of_month":"24"}', 
+						name='get_milestone_question'), 
+						type='function')]))
+	] 
+request_id='8415027409070219254' 
+id='8415027409070219254' 
+usage=CompletionUsage(prompt_tokens=492, completion_tokens=18, total_tokens=510)

@@ -1,10 +1,11 @@
 import zhipuai
 from zhipuai import ZhipuAI
-import json
-import requests
-zhipuai.api_key = "5c238273d3c113840d017c6b5a6b4ea8.JJ9dwAVQTwNP40rp"
-client = ZhipuAI(api_key="5c238273d3c113840d017c6b5a6b4ea8.JJ9dwAVQTwNP40rp") # 填写您自己的APIKey
 
+import os
+from dotenv import load_dotenv, find_dotenv
+_ = load_dotenv(find_dotenv()) # read local .env file
+zhipuai.api_key = os.getenv("ZHIPU_API_KEY")
+client = ZhipuAI(api_key=os.getenv("ZHIPU_API_KEY")) # 填写您自己的APIKey
 # 异步调用
 def get_completion_sse(prompt, model="glm-4"):
     response = zhipuai.model_api.sse_invoke(
